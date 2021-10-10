@@ -31,7 +31,6 @@ class MyExamplesController < ApplicationController
     list_nums = []
 
     i = 0
-
     while i < 6
 
       rand_nums = num.rand(60)
