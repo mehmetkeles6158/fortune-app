@@ -6,17 +6,21 @@ class MyExamplesController < ApplicationController
     num = Random.new
     #num.rand(3)
 
-    random_fortune = num.rand(3)
+    # random_fortune = num.rand(3)
 
-    if random_fortune == 1
-      fortune_teller = " you are lucky!"
-    elsif random_fortune == 2
-      fortune_teller = "you have unfortune!"
-    elsif random_fortune == 3
-      fortune_teller = "You will be rich!"
-    end
+    # if random_fortune == 1
+    #   fortune_teller = " you are lucky!"
+    # elsif random_fortune == 2
+    #   fortune_teller = "you have unfortune!"
+    # elsif random_fortune == 3
+    #   fortune_teller = "You will be rich!"
+    # end
 
-    render json: {your_fortune: fortune_teller} 
+    #improve my fortune_teller
+
+    possible_fortunes = ["You are so lucky to have a better life!", "you have unfortune to have a cloudy day!", "You will be rich in one day!" ]
+
+    render json: {your_fortune: possible_fortunes.sample} 
 
   end
 
@@ -32,7 +36,6 @@ class MyExamplesController < ApplicationController
 
     i = 0
     while i < 6
-
       rand_nums = num.rand(60)
       list_nums << rand_nums
       i += 1
@@ -59,7 +62,7 @@ class MyExamplesController < ApplicationController
     end
 
     p "No more bottles of beer on the wall, no more bottles of beer.
-Go to the store and buy some more, 99 bottles of beer on the wall."
+    Go to the store and buy some more, 99 bottles of beer on the wall."
 
     render json: {song_lyrics: the_song}
 
